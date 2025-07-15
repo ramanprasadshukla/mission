@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'; // नया इम्पोर्ट
 import Header from './Header';
-import Contact from './Pages/Contact';
+import Contact from '../../../Raman/r1/src/Pages/Contact';
 // import Home from './Pages/Home';
-import Sports from './Pages/About/Sports'
-import Class from './Pages/About/Class'
-import NotFound from './Pages/NotFound';
+import Sports from '../../../Raman/r1/src/Pages/About/Sports'
+import Class from '../../../Raman/r1/src/Pages/About/Class'
+import NotFound from '../../../Raman/r1/src/Pages/NotFound';
 
 
 

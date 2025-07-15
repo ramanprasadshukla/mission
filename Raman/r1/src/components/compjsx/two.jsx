@@ -1,5 +1,5 @@
 // import "./Two.css";
-import "./App.css";
+// import "./App.css";
 
 
 export default function Two() {

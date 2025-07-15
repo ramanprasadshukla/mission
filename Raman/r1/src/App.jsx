@@ -1,8 +1,15 @@
 import { useState } from 'react'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'; // नया इम्पोर्ट
+import Contact from './Pages/Contact';
+// import Home from './Pages/Home';
+import Sports from './Pages/About/Sports'
+import Class from './Pages/About/Class'
+import NotFound from './Pages/NotFound';
 import './App.css'
 import SchoolHomePage from "./components/compjsx/Four";
 import Two from "./components/compjsx/two";
 import Appcopy from "./components/compjsx/Appcopy";
+import Header from "./components/compjsx/mHeader";
 
 
 function App() {
@@ -10,6 +17,11 @@ function App() {
 
   return (
     <>
+    
+    <Router> 
+      <Header />
+    </Router>
+
     <SchoolHomePage/>
     <Two/>
       <div className=" w-full container my-5">

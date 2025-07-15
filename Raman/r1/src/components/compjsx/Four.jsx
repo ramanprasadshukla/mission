@@ -2,10 +2,11 @@
 // import { MapPin } from 'lucide-react';
 import Carousel from 'react-bootstrap/Carousel';
 // import ExampleCarouselImage from 'components/ExampleCarouselImage';
-import "./App.css"
-import Sch from './sch.jpg'
-import Sch2 from './sch2.jpg'
-import Sch3 from './sch3.jpg'
+// import "./App.css"
+import Sch from './assets/sch.jpg';
+import Sch2 from './assets/sch2.jpg';
+import Sch3 from './assets/sch3.jpg';
+
 const SchoolHomePage = () => {
 
   
