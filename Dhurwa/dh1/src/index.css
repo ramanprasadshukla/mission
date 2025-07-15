@@ -1,0 +1,6 @@
+@import "tailwindcss"; 
+
+/* index.css में */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
