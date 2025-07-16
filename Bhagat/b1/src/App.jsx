@@ -10,12 +10,13 @@ function App() {
 
   return (
     <>
-    {/* <Footer/> */}
+    <Footer/>
 
-    <Fpractice/>
+    {/* <Fpractice/> */}
 
     </>
   )
 }
 
 export default App
+
