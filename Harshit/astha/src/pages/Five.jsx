@@ -1,65 +1,204 @@
-import "./App.css"
-
+// import React from "react";
 import { useState } from "react";
 
-function App() {
-  const [tab, setTab] = useState("photos");
+const labs = [
+  {
+    name: "Physics Lab",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJlHdv5Esp3nwreDJm6mywt-8TNaLW0elncQ&s",
+    description:
+      "Our Physics Lab is equipped with modern apparatus for experiments in mechanics, optics, electricity, and more.",
+  },
+  {
+    name: "Chemistry Lab",
+    image: "https://news.yale.edu/sites/default/files/d6_files/White-coats.jpg",
+    description:
+      "The Chemistry Lab provides a safe environment for students to conduct chemical experiments and learn practical skills.",
+  },
+  {
+    name: "Biology Lab",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoiYH1BGxBJE6ORQVmTZYhagAi3KB5i84Sag&s",
+    description:
+      "Our Biology Lab is designed for hands-on learning in botany, zoology, and microbiology with advanced microscopes and models.",
+  },
+  {
+    name: "Computer Lab",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYbmG65vk9vnporMBcMS7judZD4Yph7X9xgw&s",
+    description:
+      "The Computer Lab features up-to-date computers and software, supporting programming, research, and digital learning.",
+  },
+  {
+    name: "Library",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX9amkBXp86UPAAQJvpp3LipfzCCDfn16zEg&s",
+    description:
+      "The Library is a quiet place for study and research, offering a vast collection of books and digital resources.",
+  },
+];
 
-  const photos = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF98sbQeNeSMz3nbGKwwnh4XyFU-ojyeNghA&s",
-    "https://scx2.b-cdn.net/gfx/news/hires/2019/galaxy.jpg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH0dbreG0xdlNKXMTE64B86Im204nc7-vdjQ&s",
-  ];
 
+const Five = (props) => (
+  <div style={{ padding: "2rem", fontFamily: "Arial, sans-serif" }}>
+    <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>
+      Science & Computer Labs
+    </h1>
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+        gap: "2rem",
+      }}
+    >
+      {labs.map((lab) => (
+        <div
+          key={lab.name}
+          style={{
+            border: "1px solid #ddd",
+            borderRadius: "10px",
+            overflow: "hidden",
+            background: "#fafafa",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+            cursor: "pointer",
+          }}
+          onClick={() => props.onLabClick(lab.name)}
+        >
+          <img
+            src={lab.image}
+            alt={lab.name}
+            style={{ width: "100%", height: "180px", objectFit: "cover" }}
+          />
+          <div style={{ padding: "1rem" }}>
+            <h2 style={{ margin: "0 0 0.5rem 0" }}>{lab.name}</h2>
+            <p style={{ color: "#555" }}>{lab.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+
+const labGalleries = {
+  "Physics Lab": [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJlHdv5Esp3nwreDJm6mywt-8TNaLW0elncQ&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJlHdv5Esp3nwreDJm6mywt-8TNaLW0elncQ&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJlHdv5Esp3nwreDJm6mywt-8TNaLW0elncQ&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJlHdv5Esp3nwreDJm6mywt-8TNaLW0elncQ&s",
+  ],
+  "Chemistry Lab": [
+    "https://news.yale.edu/sites/default/files/d6_files/White-coats.jpg",
+    "https://maths.du.ac.in/wp-content/uploads/2024/09/Lab1-1.jpg",
+    "https://news.yale.edu/sites/default/files/d6_files/White-coats.jpg",
+    "https://news.yale.edu/sites/default/files/d6_files/White-coats.jpg",
+  ],
+  "Biology Lab": [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoiYH1BGxBJE6ORQVmTZYhagAi3KB5i84Sag&s",
+    "https://maths.du.ac.in/wp-content/uploads/2024/09/Lab1-1.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYbmG65vk9vnporMBcMS7judZD4Yph7X9xgw&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoiYH1BGxBJE6ORQVmTZYhagAi3KB5i84Sag&s",
+  ],
+  "Computer Lab": [
+    "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+    "https://maths.du.ac.in/wp-content/uploads/2024/09/Lab1-1.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYbmG65vk9vnporMBcMS7judZD4Yph7X9xgw&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbKSEIK6gtLHLUz6DluqboCYYlmdZODQn-VQ&s",
+  ],
+  "Library": [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX9amkBXp86UPAAQJvpp3LipfzCCDfn16zEg&s",
+    "https://maths.du.ac.in/wp-content/uploads/2024/09/Lab1-1.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYbmG65vk9vnporMBcMS7judZD4Yph7X9xgw&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbKSEIK6gtLHLUz6DluqboCYYlmdZODQn-VQ&s",
+  ],
+};
+
+function GalleryModal({ open, images, onClose, labName }) {
+  if (!open) return null;
   return (
-    <div className="min-h-screen bg-[#eafafc] flex flex-col items-center px-4 py-10">
-      <h1 className="text-4xl font-semibold text-gray-700 mb-6">
-        <span className="text-blue-600 font-bold">Glorious</span> Moments
-      </h1>
-
-      <div className="flex space-x-2 mb-6">
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        background: "rgba(0,0,0,0.7)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 1000,
+      }}
+      onClick={onClose}
+    >
+      <div
+        style={{
+          background: "#fff",
+          borderRadius: "10px",
+          padding: "2rem",
+          maxWidth: "600px",
+          width: "90%",
+          maxHeight: "80vh",
+          overflowY: "auto",
+          position: "relative",
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
         <button
-          onClick={() => setTab("photos")}
-          className={`px-6 py-2 font-semibold rounded ${
-            tab === "photos"
-              ? "bg-green-400 text-white"
-              : "bg-white text-black border"
-          }`}
+          onClick={onClose}
+          style={{
+            position: "absolute",
+            top: 10,
+            right: 10,
+            background: "transparent",
+            border: "none",
+            fontSize: "1.5rem",
+            cursor: "pointer",
+          }}
+          aria-label="Close"
         >
-          PHOTOS
+          &times;
         </button>
-        <button
-          onClick={() => setTab("videos")}
-          className={`px-6 py-2 font-semibold rounded ${
-            tab === "videos"
-              ? "bg-green-400 text-white"
-              : "bg-white text-black border"
-          }`}
+        <h2 style={{ marginTop: 0 }}>{labName} Gallery</h2>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "1rem",
+            justifyContent: "center",
+          }}
         >
-          VIDEOS
-        </button>
-      </div>
-
-      {tab === "photos" ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-          {photos.map((src, i) => (
+          {images.map((img, idx) => (
             <img
-              key={i}
-              src={src}
-              alt={Photo ${i + 1}}
-              className="h-48 w-auto rounded shadow"
+              key={idx}
+              src={img}
+              alt={`${labName} ${idx + 1}`}
+              style={{
+                width: "400px",
+                height: "250px",
+                objectFit: "cover",
+                borderRadius: "6px",
+                boxShadow: "0 1px 4px rgba(0,0,0,0.1)",
+              }}
             />
           ))}
         </div>
-      ) : (
-        <p className="text-gray-500 text-lg mb-8">Videos will appear here...</p>
-      )}
-
-      <button className="px-5 py-2 border-2 border-blue-600 text-blue-600 font-semibold rounded hover:bg-blue-100 transition">
-        Explore Gallery
-      </button>
+      </div>
     </div>
   );
 }
 
-export default App;
+
+const FiveWithGallery = () => {
+  const [openLab, setOpenLab] = useState(null);
+  return (
+    <>
+      <Five onLabClick={setOpenLab} />
+      <GalleryModal
+        open={!!openLab}
+        images={labGalleries[openLab] || []}
+        onClose={() => setOpenLab(null)}
+        labName={openLab}
+      />
+    </>
+  );
+};
+
+export default FiveWithGallery;
+
