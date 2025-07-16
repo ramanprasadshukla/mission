@@ -1,0 +1,28 @@
+.filter-bar-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filter-bar {
+
+    width: 100%;
+  max-width: 1200px;
+  height: auto;
+
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #ebdede;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.filter-bar select,
+.filter-bar input {
+  padding: 13px 25px;
+  border-radius: 5px;
+  border: 1px solid #bea8a8;
+}
