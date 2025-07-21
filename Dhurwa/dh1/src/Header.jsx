@@ -16,9 +16,9 @@ function Header() {
       path: '/about',
       submenu: [
         { name: 'Sports', path: '/about/sports' },
-        { name: 'Class', path: '/about/class' },
+        // { name: 'Class', path: '/about/class' },
         { name: 'Teachers', path: '/about/teachers' },
-        { name: 'Location', path: '/about/locantion' },
+        { name: 'Location', path: '/about/location' },
         // { name: 'Infrastructure', path: '/about/infrastructure' }
       ]
     },
@@ -26,9 +26,9 @@ function Header() {
       name: 'Admission', 
       path: '/admission',
       submenu: [
-        { name: 'Help & Feedback', path: '/admission/help & feedback' },
+        { name: 'Help', path: '/admission/help' },
         { name: 'Contact', path: '/admission/contact' },
-        { name: 'Admission Form', path: '/admission/admission' },
+        { name: 'Admissionform', path: '/admission/admissionform' },
         // { name: 'Exam Schedule', path: '/academics/exams' },
         // { name: 'Results', path: '/academics/results' }
       ]
@@ -37,22 +37,22 @@ function Header() {
       name: 'Academies', 
       path: '/academies',
       submenu: [
-        { name: 'Procedure', path: '/academies/std.& teacher' },
-        { name: 'Fee Structure', path: '/academies/fees' },
-        { name: 'Scholarships', path: '/academies/scholarships' },
-        { name: 'Important Dates', path: '/academies/dates' },
-        { name: 'Apply Online', path: '/academies/apply' }
+        { name: 'Std', path: '/academies/std' },
+        { name: 'ClassA', path: '/academies/classAcademy' },
+        { name: 'Labs', path: '/academies/labs' },
+        // { name: 'Subjects', path: '/academies/subjects' },
+        // { name: 'Apply Online', path: '/academies/apply' }
       ]
     },
     { 
       name: 'News', 
-      path: '/news',
+      // path: '/news',
       submenu: [
         { name: 'Meritlist', path: '/news/meritlist' },
         { name: 'Result', path: '/news/result' },
-        { name: 'Vecancies', path: '/news/sports' },
-        { name: 'Transport', path: '/news/transport' },
-        { name: 'Cafeteria', path: '/news/cafeteria' }
+        { name: 'Vecancies', path: '/news/vecancies' },
+        // { name: 'Transport', path: '/news/transport' },
+        // { name: 'Cafeteria', path: '/news/cafeteria' }
       ]
     },
     { 
@@ -62,16 +62,16 @@ function Header() {
         { name: 'Festival', path: '/achivements/festival' },
         { name: 'Gallery', path: '/achivements/gallery' },
         { name: 'Alunini', path: '/achivements/alunini' },
-        { name: 'Transport', path: '/achivements/transport' },
-        { name: 'Sports History', path: '/achivements/Sports' }
+        // { name: 'Transport', path: '/achivements/transport' },
+        // { name: 'Sports History', path: '/achivements/Sports' }
       ]
     },
-    { name: 'Contact', path: '/conctact' }
+    { name: 'Contact', path: '/contact' }
   ];
 
   return (
-    <header className="bg-white-800 text-black-200 shadow-xl">
-      <div className="container mx-auto px-4">
+    <header className="bg-white-800 text-black-200 shadow-xl ">
+      <div className="container mx-auto px-4 ">
         {/* Main Header */}
         <div className="flex justify-between items-center py-3">
           {/* Logo */}
@@ -79,9 +79,11 @@ function Header() {
             <img
               src="https://cache.careers360.mobi/media/schools/social-media/logo/Capture_74yW9et.PNG"
               alt="School Logo"
-              className="h-12 w-12 rounded-full border-2 border-white"
+              className="h-15 w-15 rounded-full border-2 border-white"
             />
-            <span className="ml-3 text-xl font-bold">Aasta Vidya Mindir School</span>
+            <span className="ml-3 text-xl font-bold">Aastha Vidya Mandir English Medium School <br  />
+              <span className='text-base front-normal text-blue-500'>Central Bord Of Secondry Educantion</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Class() {
   const subjects = ['Mathematics', 'Science', 'English', 'Social Studies', 'Computer'];
@@ -24,9 +25,16 @@ function Class() {
         <p className="text-gray-700">Mrs. Anjali Verma (M.Sc., B.Ed.)</p>
       </div>
 
-      <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+      <button
+        aria-label="Join Class"
+        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+      >
         Join Class
       </button>
+
+      <div className="mt-6">
+        <Link to="/" className="text-blue-600 underline">← Back to Home</Link>
+      </div>
     </div>
   );
 }
