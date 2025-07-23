@@ -2,10 +2,11 @@
 // import { MapPin } from 'lucide-react';
 import Carousel from 'react-bootstrap/Carousel';
 // import ExampleCarouselImage from 'components/ExampleCarouselImage';
-import "./App.css"
-import Sch from './sch.jpg'
-import Sch2 from './sch2.jpg'
-import Sch3 from './sch3.jpg'
+// import "./App.css"
+import Sch from './assets/sch.jpg';
+import Sch2 from './assets/sch2.jpg';
+import Sch3 from './assets/sch3.jpg';
+
 const SchoolHomePage = () => {
 
   
@@ -31,13 +32,13 @@ const SchoolHomePage = () => {
 
       {/* Header Section */}
     <Carousel>
-      <Carousel.Item interval={1000}>
+      <Carousel.Item interval={2000}>
         <img src={Sch} className="logo d-block w-100" alt="Vite logo"  />
       </Carousel.Item>
-      <Carousel.Item interval={500}>
+      <Carousel.Item interval={2000}>
         <img src={Sch2} className="logo d-block w-100" alt="Vite logo" />
       </Carousel.Item>
-      <Carousel.Item interval={500}>
+      <Carousel.Item interval={2000}>
         <img src={Sch3} className="logo d-block w-100" alt="Vite logo" />
       </Carousel.Item>
     </Carousel>
